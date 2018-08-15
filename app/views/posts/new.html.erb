@@ -1,0 +1,27 @@
+<div>
+
+  <h1>Create a New Post</h1>
+
+   <%= render "shared/error_messages", model: @post %>
+
+   <%= form_for @post do |form| %>
+      <%= form.label :date %>
+      <%= form.date_field :date %>
+      <br>
+      <%= form.label :title  %>
+      <%= form.text_field :title %>
+      <br>
+      <%= form.label :post  %>
+      <%= form.text_area :content, :cols => 30, :rows => 10 %>
+
+
+
+      <br>
+      <%= form.submit "Add this Blog Post" %></p>
+
+   <% end %>
+
+
+
+
+</div>

@@ -1,0 +1,30 @@
+<div>
+
+
+
+<h1>Blog Posts</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Title</th>
+    <th>Post</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% @posts.each do |post| %>
+  <tr>
+    <td><%= post.date %></td>
+    <td> <%= post.title %></td>
+    <td> <%= post.content %></td>
+    <td><%= link_to "X", edit_post_path(id: post.id)%></td>
+    <td><%= link_to "X", post_path(id: post.id), method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
+<br>
+<hr>
+<%= link_to "Add New Post", new_post_path %>
+
+
+</div>
